@@ -1,5 +1,10 @@
 <?php
+   class test{
+     public function xd(){
+       echo "aYY LMAO";
+     }
+   }
+  $obj = new test();
 
-echo "sample text";
-echo "can i eat ur ass?";
+  $obj->xd();
  ?>
