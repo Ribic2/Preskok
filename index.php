@@ -6,4 +6,4 @@ class test{
 }
 $obj = new test();
 
-
+echo "b0ss"
