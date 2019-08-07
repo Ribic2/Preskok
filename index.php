@@ -1,1 +1,5 @@
-sample text
+<?php
+
+echo "sample text"
+  
+ ?>
