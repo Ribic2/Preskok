@@ -1,4 +1,9 @@
 <?php
-echo "sample";
-echo "forknife";
-echo "sample";
+class test{
+    public function __construct(){
+        echo "Object created";
+    }
+}
+$obj = new test();
+
+
