@@ -1,5 +1,5 @@
 @echo off
-color 3f
+color e
 cd C:/xampp/htdocs/preskok
 git pull
 pause
