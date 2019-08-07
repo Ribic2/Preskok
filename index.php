@@ -1,1 +1,4 @@
-echo "sample"
+<?php
+echo "sample";
+echo "forknife";
+echo "sample";
