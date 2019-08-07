@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
    class test{
      public function xd(){
@@ -29,3 +30,5 @@ $obj = new test();
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
  ?>
+=======
+>>>>>>> master
