@@ -34,16 +34,16 @@
             <input type="text" name="price_to" alt="price to">
 
             <select name="km"><!-- do 5  10 20 25 50 100 150 200 250-->
-                <option value="-5000"></option>
-                <option value="-10000">-10000</option>
-                <option value="-20000">-20000</option>
-                <option value="-25000">-25000</option>
-                <option value="-50000">-50000</option>
-                <option value="-100000">-100000</option>
-                <option value="-150000">-150000</option>
-                <option value="-200000">-200000</option>
-                <option value="-250000">-250000</option>
-                <option value="250000-">250000-</option>
+                <option value="-5000">-5000km</option>
+                <option value="-10000">-10000km</option>
+                <option value="-20000">-20000km</option>
+                <option value="-25000">-25000km</option>
+                <option value="-50000">-50000km</option>
+                <option value="-100000">-100000km</option>
+                <option value="-150000">-150000km</option>
+                <option value="-200000">-200000km</option>
+                <option value="-250000">-250000km</option>
+                <option value="250000-">250000km-</option>
             </select>
 
             <select name="Fuel">
