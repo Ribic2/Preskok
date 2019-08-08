@@ -31,6 +31,11 @@ $map->get('home', '/home', function ($request) {
     
     exit;
 });
+$map->get('/login', '/login', function ($request) {
+    $response = new Zend\Diactoros\Response();
+    $response->getBody()->write("login page");
+    return $response;
+});
 
 /*
 $map->get('user.edit', '/user/edit', function ($request) {
