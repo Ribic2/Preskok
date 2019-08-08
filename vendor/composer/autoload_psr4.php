@@ -6,11 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-<<<<<<< HEAD
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'Preskok\\' => array($baseDir . '/model'),
     'Aura\\Router\\' => array($vendorDir . '/aura/router/src'),
-=======
-    'Preskok\\' => array($baseDir . '/src'),
->>>>>>> 9be342e9a13679ef6c27902fe3d297006c2ccbaf
 );

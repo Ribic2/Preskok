@@ -6,8 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-<<<<<<< HEAD
     'Aura\\Composer\\' => array($vendorDir . '/aura/installer-system/src'),
-=======
->>>>>>> 9be342e9a13679ef6c27902fe3d297006c2ccbaf
 );
