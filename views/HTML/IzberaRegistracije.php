@@ -67,7 +67,7 @@
 			</div>
             <div class="card-footer">
                     <div class="form-group">
-						<input type="submit" value="Želim se registrerati kot POSAMEZNIK" class="btn float-center login_btn">
+						<input type="submit" value="Želim se registrerati kot TRGOVEC" class="btn float-center login_btn">
 					</div>
                 </div>
 		</div>
