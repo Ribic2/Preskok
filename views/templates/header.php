@@ -24,7 +24,7 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><span class="glyphicon">&#xe081;</span> Objavi oglas</a>
+                    <a class="nav-link text-white" href="#"><span class="glyphicon">&#xe081;</span>Objavi oglas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">Prijava</a>

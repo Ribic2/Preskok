@@ -10,9 +10,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="../css/Prijava.css">
-		<script src = "../js/prijava.js"></script>
+		<script src = "views\js\prijava.js"></script>
     </head>
-    <body>
+    <body id = "body">
         <div class="container">
         <div class="d-flex justify-content-center h-100">
 		<div class="card">
@@ -25,20 +25,20 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" class="form-control" placeholder="username" id = "username">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" class="form-control" placeholder="password" id = "password">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+						<input type="button" value="Login" class="btn float-right login_btn" onclick = "send_ajax_login()">
 					</div>
 				</form>
 			</div>

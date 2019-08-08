@@ -2,6 +2,9 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+$obj = new Preskok\connect_to_database();
+$obj->test();
+
 
 $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/views/HTML/');
 $twig = new \Twig\Environment($loader, []);

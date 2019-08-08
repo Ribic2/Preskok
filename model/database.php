@@ -2,8 +2,7 @@
 use PDO;
 class test
 {
-    public function testing()
-    {
+    public function testing(){
         return "sample";
     }
     public function returndb()
