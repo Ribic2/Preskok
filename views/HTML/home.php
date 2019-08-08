@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .kkk
+        {
+            background-image:url(../../model/database.php)
+        }
+    </style>
     <title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,25 +25,18 @@
             <form>
                 <div class="card-body filter">
                     <select name="brand">
-                        <option value="">choose brand</option>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
+                        <?php
+                        include '../../model/database.php';
+                        $pdo=\database\test::returndb();
+                        $result=$pdo->query("select * from brand;");
+                        $result=$result->fetchAll();
+                        $pdo=null;
+                        for($i=0;$i!=count($result);$i++)
+                        {
+                            echo "<option>".$result[$i][1]."</option>";
+                        }
+                        ?>
                     </select>
-
-<<<<<<< HEAD
-=======
-            <select name="brand">
-                <?php
-                include '../model/database.php';
-                ?>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </select>
->>>>>>> c559c3b625ed2199edcc96a32b7ac483c4c6bac6
 
                     <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->
                         <option value="">price from</option>

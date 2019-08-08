@@ -28,7 +28,7 @@ $map->get('home', '/home', function ($request) {
     $response = new Zend\Diactoros\Response();
     //$response->getBody()->write("HOME PAGE");
     //return $response;
-    
+    header('Location:views/HTML/home.php');
     exit;
 });
 

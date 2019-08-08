@@ -2,6 +2,10 @@
 use PDO;
 class test
 {
+    public function testing()
+    {
+        return "sample";
+    }
     public function returndb()
     {
         try
