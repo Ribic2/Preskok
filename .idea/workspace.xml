@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="df40d744-1d6f-4f8e-afc8-66b2a9433c93" name="Default Changelist" comment="" />
-=======
-    <list default="true" id="04299bd0-7f78-478d-96f2-21b4a4e61110" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
->>>>>>> master
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +13,6 @@
       <executable />
     </execution>
   </component>
-<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -31,31 +24,6 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-=======
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1P5uQTM9xByCrBrI2DTxZePau1C" />
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/index.php" />
->>>>>>> master
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -74,22 +42,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
       <changelist id="df40d744-1d6f-4f8e-afc8-66b2a9433c93" name="Default Changelist" comment="" />
       <created>1565176269908</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565176269908</updated>
       <workItem from="1565176272869" duration="1106000" />
-      <workItem from="1565178068220" duration="2601000" />
-=======
-      <changelist id="04299bd0-7f78-478d-96f2-21b4a4e61110" name="Default Changelist" comment="" />
-      <created>1565176262278</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1565176262278</updated>
-      <workItem from="1565176265135" duration="6936000" />
->>>>>>> master
+      <workItem from="1565178068220" duration="11211000" />
     </task>
     <servers />
   </component>
@@ -101,22 +60,15 @@
       <map>
         <entry key="MAIN">
           <value>
-<<<<<<< HEAD
             <State>
               <option name="COLUMN_ORDER" />
             </State>
-=======
-            <State />
->>>>>>> master
           </value>
         </entry>
       </map>
     </option>
   </component>
-<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
-=======
->>>>>>> master
 </project>
