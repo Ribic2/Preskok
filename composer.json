@@ -1,6 +1,5 @@
 {
     "require": {
-        "zendframework/zendframework": "^3.0"
-	"twig/twig":"^2.0"
+        "aura/router": "^3.1"
     }
 }

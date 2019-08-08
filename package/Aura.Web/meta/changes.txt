@@ -1,0 +1,5 @@
+Hygiene release.
+
+- Remove unused use statement (thanks @koriym)
+
+- Point travis status badge to develop branch
