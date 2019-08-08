@@ -26,6 +26,18 @@
                         <option value="audi">Audi</option>
                     </select>
 
+<<<<<<< HEAD
+=======
+            <select name="brand">
+                <?php
+                include '../model/database.php';
+                ?>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+>>>>>>> c559c3b625ed2199edcc96a32b7ac483c4c6bac6
 
                     <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->
                         <option value="">price from</option>
