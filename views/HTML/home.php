@@ -29,9 +29,9 @@
                 <option value="Clio">Clio</option>
             </select>
 
-            <input type="text" name="price_from" alt="price from">
+            <input type="text" name="price_from" placeholder="price from">
 
-            <input type="text" name="price_to" alt="price to">
+            <input type="text" name="price_to" placeholder="price to">
 
             <select name="km"><!-- do 5  10 20 25 50 100 150 200 250-->
                 <option value="-5000">-5000km</option>
