@@ -1,6 +1,12 @@
 {
+    "description": "Think Camp preskok",
     "require": {
-        "zendframework/zendframework": "^3.0"
-	"twig/twig":"^2.0"
+        "zendframework/zendframework": "^3.0",
+	    "twig/twig":"^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Preskok\\":"src"
+        }
     }
 }
