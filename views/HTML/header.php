@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>fh</title>
+    <title>header</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,12 +13,11 @@
     </style>
 </head>
 <body>
-    
     <!-- header -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
       <!-- Brand/logo -->
         <a class="navbar-brand" href="#">
-            <img src="https://brandmark.io/logo-rank/random/apple.png" alt="CarMarket" style="width:40px;">
+            <img src="https://www.stickpng.com/assets/images/59db69d33752880e93e16efc.png" alt="CarMarket" style="width:150px;">
         </a>
 
         <!-- Links -->
@@ -33,11 +32,5 @@
             </ul>
         </div>
     </nav>
-    
-    <!-- footer -->
-    
-
-    
-    
 </body>
 </html>
