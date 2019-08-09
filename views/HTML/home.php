@@ -28,14 +28,14 @@
                         <?php
                             require __DIR__ . '/vendor/autoload.php';
 
-                            /*$obj = new Preskok\connect_to_database();
+                            $obj = new Preskok\connect_to_database();
 
                             $sql = "SELECT brandname from brand";
 
                             $stmt = $obj->query($sql);
                             foreach($stmt as $row){
                                 echo '<option value="'.$row['brandname'].'">'.$row['brandname'].'</option>';
-                            }*/
+                            }
                             for($i = 0; $i <= 10; $i++){
                                 echo "<option value = ".$i.">".$i."</option>";
                             }
