@@ -169,12 +169,5 @@
 
     </div>
 </div>
-    <script>
-        function load()
-        {  
-            window.history.pushState("page2","title","google.com");
-            //alert();
-        }
-    </script>
-    </body>
+</body>
 </html>
