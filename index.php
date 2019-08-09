@@ -118,3 +118,17 @@ foreach ($response->getHeaders() as $name => $values) {
 }
 http_response_code($response->getStatusCode());
 echo $response->getBody();
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body onload="sample()">
+    </body>
+    <script>
+        function sample()
+        {
+            window.location.href="views/HTML/home.php";
+        }
+    </script>
+</html>

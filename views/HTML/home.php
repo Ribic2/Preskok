@@ -1,53 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
-        body
+        .card-body
         {
-            background-image:url(../css/ozadje.png)
+            background-color: rgba(76, 83, 91, 1);
+            border-width: 2px;
+            border-style: solid;
+            height: 680px;
         }
-
+        body{
+            background-image: url("ozadje.png"); 
+            padding-top: 56px;
+        }
+        .login_btn{
+        color: black !important;
+        background-color: #FFC312 !important;
+        width: 100px !important;
+        float: right !important;
+        }
+        .login_btn:hover{
+        color: black !important;
+        background-color: white !important;
+        }
+        .box
+        {
+            padding:5%;
+            font-size:100%;
+        }
     </style>
-    <title>Home</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
 
+  <title>Heroic Features - Start Bootstrap Template</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/heroic-features.css" rel="stylesheet">
 </head>
-<body onload="load()">
-<?php
-include '../templates/header.php';
-?>
-<div class="container">
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CAR MARKET</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Post an ad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="personal.php">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container mt-5">
+
+    <!-- Jumbotron Header -->
+      <div class="container">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <form>
                 <div class="card-body filter">
-<<<<<<< HEAD
 
                     <select name="brand" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>
-
-                    <select name="price_from" class="browser-default custom-select custom-select-lg mb-3"><!-- do 5  10 20 25 50 100 150 200 250-->
-=======
-                    <select name="brand">
-                        {% for i in brands %}
-                            <option>{{ i }}</option>
-                        {% endfor %}
+                        <option>Brand</option>
+                        <?php
+                        include '../../model/pdo_connect.php';
+                        $pdo = (new Preskok\pdo_connect())->getInstance();
+                        $result=$pdo->query("select brandname from brand order by brandname asc");
+                        $result=$result->fetchAll();
+                        for($i=0;$i!=count($result);$i++)
+                        {
+                            $x=$result[$i][0];
+                            echo "<option value=$x>$x</option>";
+                        }
+                        $pdo=null;
+                        ?>
                     </select>
                     
-                    <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->
->>>>>>> 795af3b6a460e4de7cd18277439caab0841bc68f
-                        <option value="">price from</option>
+                    <select name="price_from" class="browser-default custom-select custom-select-lg mb-3">
+                        <option value="">Minimum price</option>
                         <option value="100 EUR">100 EUR</option>
                         <option value="500 EUR">500 EUR</option>
                         <option value="1.000 EUR">1.000 EUR</option>
@@ -87,8 +137,8 @@ include '../templates/header.php';
                         <option value="100.000 EUR">100.000 EUR</option>
                     </select>
 
-                    <select name="price_to" class="browser-default custom-select custom-select-lg mb-3"><!-- do 5  10 20 25 50 100 150 200 250-->
-                        <option value="">price to</option>
+                    <select name="price_to" class="browser-default custom-select custom-select-lg mb-3">
+                        <option value="">Maximum price</option>
                         <option value="100 EUR">100 EUR</option>
                         <option value="500 EUR">500 EUR</option>
                         <option value="1.000 EUR">1.000 EUR</option>
@@ -128,8 +178,8 @@ include '../templates/header.php';
                         <option value="100.000 EUR">100.000 EUR</option>
                     </select>
 
-                    <select name="km" class="browser-default custom-select custom-select-lg mb-3"><!-- do 5  10 20 25 50 100 150 200 250-->
-                        <option value="">choose km</option>
+                    <select name="km" class="browser-default custom-select custom-select-lg mb-3">
+                        <option value="">Choose mileage</option>
                         <option value="-5000">-5000km</option>
                         <option value="-10000">-10000km</option>
                         <option value="-20000">-20000km</option>
@@ -143,16 +193,13 @@ include '../templates/header.php';
                     </select>
 
                     <select name="Fuel" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="disel">disel</option>
-                        <option value="gasoline">gasoline</option>
-                        <option value="electricity">electricity</option>
+                        <option value="disel">Diesel</option>
+                        <option value="gasoline">Gasoline</option>
+                        <option value="electricity">Electric</option>
                     </select >
 
-                    <br>
-                    <br>
-
                     <select name="model" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="">choose model</option>
+                        <option value="">Car model</option>
                         <option value="A4">A4</option>
                         <option value="R8">R8</option>
                         <option value="C3">C3</option>
@@ -160,35 +207,54 @@ include '../templates/header.php';
                     </select>
 
                     <select name="year_from" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="1919">1919</option>
-                        <option value="1950">1950</option>
-                        <option value="1990">1990</option>
+                        <option>Oldest make year</option>
+                        <?php
+                        for($i=1900;$i!=2020;$i++)
+                        {
+                            echo "<option value=$i>$i</option>";
+                        }
+                        ?>
                     </select>
 
                     <select name="year_to" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="1919">1919</option>
-                        <option value="1950">1950</option>
-                        <option value="1990">1990</option>
+                        <option>Youngest make year</option>
+                        <?php
+                        for($i=1900;$i!=2020;$i++)
+                        {
+                            echo "<option value=$i>$i</option>";
+                        }
+                        ?>
                     </select>
-
+                    <div style="color:white; text-align:center;">
                     <input type="checkbox" name="used" value="new" id="fancy-checkbox-default">
                     New
 
                     <input type="checkbox" name="used" value="testing">
-                    Testing
+                    Tested
 
                     <input type="checkbox" name="used" value="used">
                     Used
-
-
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Search" class="btn login_btn" onclick = "send_ajax_login()">
+                    </div>
                 </div>
             </form>
         </div>
-
+        </div>
+          <div class="box">
+              <p class="m-0 text-center text-white">Copyright &copy; dev.carmarket.com 2019</p>
+          </div>
     </div>
 </div>
-<?php
-include '../templates/footer.php';
-?>
+<!--
+  <footer class="navbar fixed-bottom py-5 bg-dark">
+    
+  </footer>
+-->
+    <!--
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    -->
 </body>
 </html>
