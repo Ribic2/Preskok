@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" id = "content_area">
 
             <div class="col-xl-3 mg_">
                 <div class="card pad">
@@ -57,82 +57,52 @@
 
             <div class="col-xl-9">
                 <div class="card mg_">
-
                     <div class="card-body ad">
-                        <div class="row">
-                            <div class="col-xl-3">
-                                <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img">
-                                <!-- img -->
-                            </div>
-                            <div class="col-xl-9">
-                                <!-- info -->
-                                <div class="row">
-                                    <div class="col-xl-9">
-
-                                        <h5 class="card-title"><a>Ime avta</a></h5>
-
-                                        <div class="info_car">
-                                            -osnovni podatki o avtu<br>
-                                            -osnovni podatki o avtu<br>
-                                            -osnovni podatki o avtu<br>
-                                            -osnovni podatki o avtu
-                                        </div>
-                                        <br>
-                                        <a class="btn login_btn"><i class="fas fa-clone left"></i> View AD</a>
-                                    </div>
-                                    <div class="col-xl-3">
-                                        <h5 class="card-title"><a>cena:PHPshit</a></h5>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <h5 class="card-title"><a>KRAJ</a></h5>
-                                        <h5 class="card-title"><a>Številka</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card mg_">
-
-                    <div class="card-body ad">
-                        <div class="row">
-                            <div class="col-xl-3">
-                                <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img">
-                                <!-- img -->
-                            </div>
-                            <div class="col-xl-9">
-                                <!-- info -->
-                                <div class="row">
-                                    <div class="col-xl-9">
-
-                                        <h5 class="card-title"><a>Ime avta</a></h5>
-
-                                        <div class="info_car">
-                                            -osnovni podatki o avtu<br>
-                                            -osnovni podatki o avtu<br>
-                                            -osnovni podatki o avtu<br>
-                                            -osnovni podatki o avtu
-                                        </div>
-                                        <br>
-                                        <a class="btn login_btn"><i class="fas fa-clone left"></i> View AD</a>
-                                    </div>
-                                    <div class="col-xl-3">
-                                        <h5 class="card-title"><a>cena:PHPshit</a></h5>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <h5 class="card-title"><a>KRAJ</a></h5>
-                                        <h5 class="card-title"><a>Številka</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
+                        <?php
+                            include '../../model/pdo_connect.php';
+                            $pdo = (new Preskok\pdo_connect())->getInstance();
+                            
+                            $sql = "select brand.brandname, ad.price, contact.phone_number, ad.first_registration, location.city, ad.distance_driven, engine_type.engine_type, engine_type.gearbox from ad, brand, user, engine_type, location, contact where brand.brandname = 'BMW' limit 5";
+                            $stmt = $pdo->query($sql);
+                            $stmt->execute();
+                            $resoult = $stmt->fetchAll();
+                            
+                            foreach($resoult as $row){
+                                echo "<div class=row>";
+                                echo "<div class=col-xl-3>";
+                                echo "<img src=https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 class=img>";
+                                echo "</div>";
+                                echo "<div class=col-xl-9>";
+                                echo "<div class=row>";
+                                echo "<div class=col-xl-9>";
+                                echo                    "<h5 class=card-title><a>".$row['brandname']."</a></h5>";
+                                echo                    "<div class=info_car>";
+                                echo                        "-".$row['engine_type'];
+                                echo                        "<br>";
+                                echo                        "-".$row['distance_driven'];
+                                echo                        "<br>";                               
+                                echo                        "-".$row['gearbox'];
+                                echo                        "<br>";
+                                echo                        "-".$row['first_registration'];
+                                echo                        "<br>";
+                                echo                    "</div>";
+                                echo                    "<br>";
+                                echo                    "<a class=btn login_btn><i class=fas fa-clone left></i></a>";
+                                echo               "</div>";
+                                echo                "<div class=col-xl-3>";
+                                echo                    "<h5 class=card-title><a>".$row['price']."</a></h5>";
+                                echo                    "<br>";
+                                echo                    "<br>";
+                                echo                    "<br>";
+                                echo                    "<h5 class='card-title'><a>".$row['city']."</a></h5>";
+                                echo                    "<h5 class='card-title'><a>".$row['phone_number']."</a></h5>";
+                                echo                "</div>";
+                                echo            "</div>";
+                                echo        "</div>";
+                                echo    "</div>";
+                                echo "</div>";
+                            }
+                    ?>
                 </div>
 
 
