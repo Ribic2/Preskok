@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+function alert($x)
+{
+    echo '<script>alert("'.$x.'");</script>';
+}
 if(isset($_POST['username'])&&isset($_POST['password']))
 {
-    echo '<script>alert("'.$_POST['password'].'");</script>';
-    include '../../model/pdo_connect.php';
-    //$pdo=\Preskok\connect_to_database::__construct();
-    $pdo = (new Preskok\pdo_connect())->getInstance();
-    $x="false";
-    $result=$pdo->query("select * from login");
-    $result=$result->fetchall();
-    for($i=0;$i!=count($result);$i++)
+    if(strlen($_POST['username'])>1&&strlen($_POST['password'])>1)
     {
-        if($result[$i][0]==$_POST['username']&&$result[$i][1]==$_POST['password'])
+        include '../../model/pdo_connect.php';
+        $pdo = (new Preskok\pdo_connect())->getInstance();
+        $sql="select idcontact from contact where email='".$_POST['username']."';";
+        $result=$pdo->query($sql);
+        //alert($sql);
+        $result=$result->fetchall();
+        if(count($result)>0)
         {
-            $x="true";
+            $userid=$result[0][0];
+            $result=$pdo->query("select password from user where idcontact='$userid';");
+            $result=$result->fetchall();
+            $pass=$result[0][0];
+            if(password_verify($_POST['password'],$pass))
+            {
+                alert("Successfully logged in!");
+                header('Location:home.php');
+            }
+            else
+            {
+                alert("Wrong password");
+            }
+            $pdo=null;
+        }
+        else
+        {
+            alert("Email not found!");
         }
     }
-    $pdo=null;
-    echo('<script>alert("'.$x.'");</script>');
 }
 ?>
     <head>
