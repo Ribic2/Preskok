@@ -21,20 +21,23 @@ if(isset($_POST['username'])&&isset($_POST['password']))
 
 
 
-    $password = 'password';
-    $username = 'username';
+    $password = 'pass';
+    $username = 'user2';
     $hash = crypt($password,'$2a$09$anexamplestringforsalt$');
 
-    $check= $pdo->query("SELECT * FROM contact WHERE email = 'username'");
+    $check= $pdo->query("SELECT * FROM login WHERE username = '$username'");
     $user = $check->fetchall();
 
 
 
-    if ($username&& password_verify($_POST['password'], $_POST['username']) ){
+    if ($username ==$user[0][0] && $password == $user[0][1] ){
         echo "valid";
     }
     else {
-        echo "not valid";
+        echo $username;
+        echo $password;
+        echo $user[0];
+        echo $user[1];
     }
     $pdo=null;
 }
