@@ -15,29 +15,52 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xl-3">
-                <div class="card"> <!--  mal spremenit za filtre, da nebo enaku ku adi za avte  -->
+            <div class="col-xl-3 mg_">
+                <div class="card pad">
+                    <h3 class="card-title"><a>Filtri</a></h3>
+                    <div class="card mg_">
 
-                    <div class="card-body">
+                        <div class="card-body ad naslov">
 
-                        <h4 class="card-title"><a>Filtri</a></h4>
+                            <h4 class="card-title"><a>starost</a></h4>
+                            <div class="card-body filtri">
+                                <form>
+                                    <input type="checkbox"  value="starost">Used <br>
+                                    <input type="checkbox"  value="starost">Testing <br>
+                                    <input type="checkbox"  value="starost">New <br>
 
+                                </form>
+                            </div>
+                        </div>
 
+                    </div>
+                    <div class="card mg_">
+
+                        <div class="card-body ad naslov">
+
+                            <h4 class="card-title"><a>Filtri</a></h4>
+                            <div class="card-body filtri">
+                                <form>
+                                    <input type="checkbox"  value="starost">Used <br>
+                                    <input type="checkbox"  value="starost">Testing <br>
+                                    <input type="checkbox"  value="starost">New <br>
+
+                                </form>
+                            </div>
+                        </div>
 
                     </div>
 
                 </div>
-
-
             </div>
 
             <div class="col-xl-9">
-                <div class="card">
+                <div class="card mg_">
 
-                    <div class="card-body">
+                    <div class="card-body ad">
                         <div class="row">
                             <div class="col-xl-3">
-                                tuki bo slika
+                                <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img">
                                 <!-- img -->
                             </div>
                             <div class="col-xl-9">
@@ -61,7 +84,8 @@
                                         <br>
                                         <br>
                                         <br>
-                                        <h6 class="card-title"><a>Tuki je David hotu KRAJ</a></h6>
+                                        <h5 class="card-title"><a>KRAJ</a></h5>
+                                        <h5 class="card-title"><a>Številka</a></h5>
                                     </div>
                                 </div>
                             </div>

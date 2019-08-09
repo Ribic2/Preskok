@@ -1,5 +1,6 @@
 body {
-
+ background-image: url('https://wallpaperplay.com/walls/full/c/7/a/250327.jpg');
+    width: 100%;
 }
 .login_btn{
     color: black;
@@ -23,4 +24,17 @@ body {
 }
 .mg_ {
     margin-top: 15px;
+}
+.naslov {
+    color: white;
+    background-color: rgba(76, 83, 91, 1);
+}
+.filtri {
+    color: black;
+    background-color: white;
+    border: solid 1px rgba(76, 83, 91, 1);
+    border-radius: 3px;
+}
+.pad {
+    padding: 5px;
 }
