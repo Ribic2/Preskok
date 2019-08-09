@@ -2,6 +2,10 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/views/HTML/');
+$twig = new \Twig\Environment($loader, []);
+
+
 // create a server request object
 $request = Zend\Diactoros\ServerRequestFactory::fromGlobals
     (
@@ -16,27 +20,52 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals
 $routerContainer = new Aura\Router\RouterContainer();
 $map = $routerContainer->getMap();
 
+
 // add a route to the map, and a handler for it
-$map->get('index', '/', function ($request) {
+
+//Home root
+$map->get('home', '/', function ($request) use ($twig) {
     $response = new Zend\Diactoros\Response();
-    $response->getBody()->write("INDEX PAGE");
+    $response->getBody()->write(
+        $twig->render('home.php')
+    );
     return $response;
 });
 
-
-$map->get('home', '/home', function ($request) {
+//Login
+$map->get('login', '/login', function ($request) use ($twig) {
     $response = new Zend\Diactoros\Response();
-    //$response->getBody()->write("HOME PAGE");
-    //return $response;
-    header('Location:views/HTML/home.php');
-    exit;
-});
-$map->get('/login', '/login', function ($request) {
-    $response = new Zend\Diactoros\Response();
-    $response->getBody()->write("login page");
+    $response->getBody()->write(
+        $twig->render('Prijava.php')
+    );
     return $response;
 });
 
+//Registration selecter
+$map->get('registration_selector', '/registration_selector', function ($request) use ($twig) {
+    $response = new Zend\Diactoros\Response();
+    $response->getBody()->write(
+        $twig->render('IzberaRegistracije.php')
+    );
+    return $response;
+});
+
+//Registration for normal user
+$map->get('registration_private', '/registration', function ($request) use ($twig) {
+    $response = new Zend\Diactoros\Response();
+    $response->getBody()->write(
+        $twig->render('RegistracijaPosameznika.php')
+    );
+    return $response;
+});
+//Registration for Seller
+$map->get('registration_sellet', '/registration_seller', function ($request) use ($twig) {
+    $response = new Zend\Diactoros\Response();
+    $response->getBody()->write(
+        $twig->render('RegistracijaTrgovca.php')
+    );
+    return $response;
+});
 /*
 $map->get('user.edit', '/user/edit', function ($request) {
    $responseHandler("Text");

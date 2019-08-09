@@ -1,21 +1,19 @@
 <?php
 namespace Preskok;
 
-$ip="160.153.133.165";
-$db="Preskok";
-$dsn="mysql:host=$ip;dbname=$db;charset=utf8mb4";
-$options=
-    [
-    PDO::ATTR_EMULATE_PREPARES   => false,
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ];
-try
-{
-    $pdo = new PDO($dsn, "preskok", "Preskok2019", $options);
-}
-catch (Exception $e)
-{
-  error_log($e->getMessage());
-  exit('Error');
+class connect_to_database{
+    public $host = "160.153.133.165";
+    public $db = "Preskok";
+    public $username = "preskok";
+    public $password = "Preskok2019";
+
+    public function __construct(){
+      try{
+        $pdo = new pdo("mysql:host=".$this->host.";dbname=".$this->db.",".$this->username.",".$this->password);
+        return $pdo;
+      }
+      catch(PDOException $e){
+        echo $e;
+      }
+    }
 }

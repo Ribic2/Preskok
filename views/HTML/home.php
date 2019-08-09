@@ -26,18 +26,22 @@
                 <div class="card-body filter">
                     <select name="brand">
                         <?php
-                        include '../../model/database.php';
-                        $pdo=\database\test::returndb();
-                        $result=$pdo->query("select * from brand;");
-                        $result=$result->fetchAll();
-                        $pdo=null;
-                        for($i=0;$i!=count($result);$i++)
-                        {
-                            echo "<option>".$result[$i][1]."</option>";
-                        }
+                            require __DIR__ . '/vendor/autoload.php';
+
+                            /*$obj = new Preskok\connect_to_database();
+
+                            $sql = "SELECT brandname from brand";
+
+                            $stmt = $obj->query($sql);
+                            foreach($stmt as $row){
+                                echo '<option value="'.$row['brandname'].'">'.$row['brandname'].'</option>';
+                            }*/
+                            for($i = 0; $i <= 10; $i++){
+                                echo "<option value = ".$i.">".$i."</option>";
+                            }
+
                         ?>
                     </select>
-
                     <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->
                         <option value="">price from</option>
                         <option value="100 EUR">100 EUR</option>
