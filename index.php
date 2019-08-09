@@ -26,8 +26,22 @@ $map = $routerContainer->getMap();
 //Home root
 $map->get('home', '/', function ($request) use ($twig) {
     $response = new Zend\Diactoros\Response();
+<<<<<<< HEAD
     $response->getBody()->write(
         $twig->render('home.php')
+=======
+    $stmt = $pdo->prepare("SELECT * FROM brand;");
+    $stmt->execute();
+
+    $car_brands = array();
+   
+    foreach($stmt->fetchAll() as $row){
+        array_push($car_brands, $row['brandname']);
+    }
+
+    $response->getBody()->write(
+        $twig->render('home.php', ['brands'=>$car_brands])
+>>>>>>> 1772bd326097586ab3118fcd6b3e911d95d1d41e
     );
     return $response;
 });
