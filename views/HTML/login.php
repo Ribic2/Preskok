@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+
 if(isset($_POST['username'])&&isset($_POST['password']))
 {
 
@@ -18,7 +19,30 @@ if(isset($_POST['username'])&&isset($_POST['password']))
         }
     }
     $pdo=null;
+<<<<<<< HEAD
+    echo('<script>alert("'.$x.'");</script>');
 
+    $check =0;
+
+    $password = 'password';
+    $username = 'username';
+    $hash = dcrypt($password,'$2a$09$anexamplestringforsalt$')."\n<br>";
+
+    $check= $pdo->query("SELECT * FROM users WHERE username = 'username'");
+    $check->execute([$_POST['username']]);
+    $user = $check->fetch();
+
+
+
+    if ($user && password_verify($_POST['password'], $user['username']) ){
+        echo "valid";
+    }
+    else {
+        echo "not valid";
+    }
+=======
+
+>>>>>>> ecdd1cc344b1427ba07a5b16a208b4e434d75653
 }
 ?>
     <head>
@@ -42,6 +66,39 @@ if(isset($_POST['username'])&&isset($_POST['password']))
                     </div>
                     <div class="card-body">
                         <form method="post" action="login.php">
+<<<<<<< HEAD
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+                        <input type="text" class="form-control" placeholder="username" id = "username" name="password">
+                    </div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password" id = "password" name="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn" onclick = "function()">
+                    </div>
+
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="register.php">Sign Up</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="register.php">Forgot your password?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+=======
                             <div class="input-group form-group">
                                <div class="input-group-prepend">
                                   <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -72,6 +129,7 @@ if(isset($_POST['username'])&&isset($_POST['password']))
                     </div>
                 </div>
             </div>
+>>>>>>> ecdd1cc344b1427ba07a5b16a208b4e434d75653
         </div>
     </body>
 </html>
