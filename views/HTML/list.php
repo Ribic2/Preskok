@@ -13,11 +13,16 @@
 
 </head>
 <body>
+<<<<<<< HEAD
+    <div class="container">
+        <div class="row" id = "content_area">
+=======
 <?php
 include '../templates/header.php';
 ?>
     <div class="container" style="height: 1500px">
         <div class="row">
+>>>>>>> 079eca6dfa8f23bcd1ff5235de6711af05b8f7f7
 
             <div class="col-xl-3 mg_">
                 <div class="card pad">
@@ -60,8 +65,54 @@ include '../templates/header.php';
 
             <div class="col-xl-9">
                 <div class="card mg_">
-
                     <div class="card-body ad">
+<<<<<<< HEAD
+                        <?php
+                            include '../../model/pdo_connect.php';
+                            $pdo = (new Preskok\pdo_connect())->getInstance();
+                            
+                            $sql = "select brand.brandname, ad.price, contact.phone_number, ad.first_registration, location.city, ad.distance_driven, engine_type.engine_type, engine_type.gearbox from ad, brand, user, engine_type, location, contact where brand.brandname = 'BMW' limit 5";
+                            $stmt = $pdo->query($sql);
+                            $stmt->execute();
+                            $resoult = $stmt->fetchAll();
+                            
+                            foreach($resoult as $row){
+                                echo "<div class=row>";
+                                echo "<div class=col-xl-3>";
+                                echo "<img src=https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 class=img>";
+                                echo "</div>";
+                                echo "<div class=col-xl-9>";
+                                echo "<div class=row>";
+                                echo "<div class=col-xl-9>";
+                                echo                    "<h5 class=card-title><a>".$row['brandname']."</a></h5>";
+                                echo                    "<div class=info_car>";
+                                echo                        "-".$row['engine_type'];
+                                echo                        "<br>";
+                                echo                        "-".$row['distance_driven'];
+                                echo                        "<br>";                               
+                                echo                        "-".$row['gearbox'];
+                                echo                        "<br>";
+                                echo                        "-".$row['first_registration'];
+                                echo                        "<br>";
+                                echo                    "</div>";
+                                echo                    "<br>";
+                                echo                    "<a class=btn login_btn><i class=fas fa-clone left></i></a>";
+                                echo               "</div>";
+                                echo                "<div class=col-xl-3>";
+                                echo                    "<h5 class=card-title><a>".$row['price']."</a></h5>";
+                                echo                    "<br>";
+                                echo                    "<br>";
+                                echo                    "<br>";
+                                echo                    "<h5 class='card-title'><a>".$row['city']."</a></h5>";
+                                echo                    "<h5 class='card-title'><a>".$row['phone_number']."</a></h5>";
+                                echo                "</div>";
+                                echo            "</div>";
+                                echo        "</div>";
+                                echo    "</div>";
+                                echo "</div>";
+                            }
+                    ?>
+=======
                         <div class="row">
                             <div class="col-xl-3">
                                 <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img">
@@ -136,6 +187,7 @@ include '../templates/header.php';
                         </div>
                     </div>
 
+>>>>>>> 079eca6dfa8f23bcd1ff5235de6711af05b8f7f7
                 </div>
 
 
