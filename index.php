@@ -15,7 +15,28 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals
     $_COOKIE,
     $_FILES
 );
+//sql
 
+/*
+use Aura\Sql\ExtendedPdo;
+use Aura\Sql\ConnectionLocator;
+
+$connection_factory = new ConnectionLocator();
+
+$connection_factory->setDefault(function () {
+    return new ExtendedPdo(
+        'mysql:160.153.133.165;dbname=Preskok',
+        'preskok',
+        'Preskok2019'
+    );
+});
+
+*/
+
+/*$pdo = new PDO('mysql:160.153.133.165;dbname=Preskok','preskok','Preskok2019');
+var_dump($pdo);exit;*/
+
+$pdo = (new Preskok\pdo_connect())->getInstance();
 // create the router container and get the routing map
 $routerContainer = new Aura\Router\RouterContainer();
 $map = $routerContainer->getMap();
@@ -24,19 +45,30 @@ $map = $routerContainer->getMap();
 // add a route to the map, and a handler for it
 
 //Home root
-$map->get('home', '/', function ($request) use ($twig) {
+$map->get('home', '/', function ($request) use ($twig, $pdo) {
     $response = new Zend\Diactoros\Response();
+    $stmt = $pdo->prepare("SELECT * FROM brand;");
+    $stmt->execute();
+
+    $car_brands = array();
+
+    foreach($stmt->fetchAll() as $row){
+        array_push($car_brands, $row['brandname']);
+    }
+    print_r($car_brands);
+
     $response->getBody()->write(
-        $twig->render('home.php')
+        $twig->render('home.php', $car_brands)
     );
     return $response;
 });
 
 //Login
-$map->get('login', '/login', function ($request) use ($twig) {
+$map->get('login', '/login', function ($request) use ($twig, $pdo) {
     $response = new Zend\Diactoros\Response();
+    
     $response->getBody()->write(
-        $twig->render('Prijava.php')
+        $twig->render('Prijava.php', )
     );
     return $response;
 });
