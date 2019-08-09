@@ -13,23 +13,26 @@
             border: solid black 1px;
             border-radius: 15px;
         }
+        body{
+            background-image: url(https://image.shutterstock.com/image-vector/abstract-yellow-gray-arrow-3d-260nw-1044122824.jpg )
+        }
     </style>
 </head>
-<body>
+<body class="bg-info">
     <div class="container">
         <!--title-->
-        <div class="row borderc p-5" style="border: solid black 2px; border-top: solid white 2px; border-top-left-radius: 0px; border-top-right-radius: 0px;">
+        <div class="row borderc p-5 bg-white" style="border: solid black 2px; border-top: solid white 2px; border-top-left-radius: 0px; border-top-right-radius: 0px;">
             <div class="col-sm-8 p-3">
                 <h1>Ime Avta</h1>
             </div>
-            <div class="col-sm-4 borderc text-center p-3">
+            <div class="col-sm-4 borderc text-center p-3 bg-light">
                 <h1>5000€</h1>
             </div>
         </div>
         <!--content-->
         <div class="row mt-4 text-center">
             <!--slike-->
-            <div class="col-md-8 borderc p-3">
+            <div class="col-md-8 borderc p-3 bg-white">
                 <img src="https://www.stickpng.com/assets/images/59db69d33752880e93e16efc.png" alt="Slika" class="border" style="width:100%;">
                 <div style="height: 125px;" class="mt-2">
                     <img src="https://partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/815692" alt="Slika" style="height: 100%;" class="float-left border mr-2">
