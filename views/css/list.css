@@ -11,3 +11,8 @@ body {
     background-color: white;
     border: solid black 1px;
 }
+.img {
+    border: solid 2px rgba(76, 83, 91, 1);
+    border-radius: 3px;
+    width: 100%;
+}

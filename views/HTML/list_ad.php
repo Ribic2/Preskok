@@ -20,6 +20,7 @@
             <div class="row">
                 <div class="col-xl-3">
                     tuki bo slika
+                    <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img">
                     <!-- img -->
                 </div>
                 <div class="col-xl-9">
