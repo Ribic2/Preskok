@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/model" isTestSource="false" packagePrefix="Preskok\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aura/installer-system" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aura/router" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/aura/sql" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/container-interop" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />

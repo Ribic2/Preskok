@@ -109,6 +109,7 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-xmlrpc" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zendxml" />
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/aura/sql" />
     </include_path>
   </component>
 </project>

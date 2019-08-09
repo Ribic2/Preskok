@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+
 if(isset($_POST['username'])&&isset($_POST['password']))
 {
 
@@ -18,9 +19,25 @@ if(isset($_POST['username'])&&isset($_POST['password']))
     }
     $pdo=null;
     echo('<script>alert("'.$x.'");</script>');
-    $password = 'mypassword';
-    $hash = crypt($password);
-    echo $password;
+
+    $check =0;
+
+    $password = 'password';
+    $username = 'username';
+    $hash = dcrypt($password,'$2a$09$anexamplestringforsalt$')."\n<br>";
+
+    $check= $pdo->query("SELECT * FROM users WHERE username = 'username'");
+    $check->execute([$_POST['username']]);
+    $user = $check->fetch();
+
+
+
+    if ($user && password_verify($_POST['password'], $user['username']) ){
+        echo "valid";
+    }
+    else {
+        echo "not valid";
+    }
 }
 ?>
     <head>
@@ -43,7 +60,7 @@ if(isset($_POST['username'])&&isset($_POST['password']))
                         <h3>Sign In</h3>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="prijava.php">
+                        <form method="post" action="login.php">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -60,16 +77,17 @@ if(isset($_POST['username'])&&isset($_POST['password']))
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="button" value="Login" class="btn float-right login_btn" onclick = "send_ajax_login()">
-					</div>
+						<input type="submit" value="Login" class="btn float-right login_btn" onclick = "function()">
+                    </div>
+
 				</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
+					Don't have an account?<a href="register.php">Sign Up</a>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
+					<a href="register.php">Forgot your password?</a>
 				</div>
 			</div>
 		</div>

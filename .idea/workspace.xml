@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df40d744-1d6f-4f8e-afc8-66b2a9433c93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/HTML/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/HTML/test2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/preskok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/preskok.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/HTML/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/HTML/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -128,6 +133,7 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-xmlrpc" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zendxml" />
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/aura/sql" />
     </include_path>
   </component>
   <component name="ProjectId" id="1P5uRQM5rhu64CnhAZ1NiMo4Luk" />
@@ -164,7 +170,7 @@
       <workItem from="1565176272869" duration="1106000" />
       <workItem from="1565178068220" duration="17483000" />
       <workItem from="1565274156228" duration="121000" />
-      <workItem from="1565335088235" duration="922000" />
+      <workItem from="1565335088235" duration="12847000" />
     </task>
     <servers />
   </component>
