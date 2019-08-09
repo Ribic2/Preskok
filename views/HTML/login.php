@@ -5,8 +5,9 @@
 if(isset($_POST['username'])&&isset($_POST['password']))
 {
 
-    include '../../model/database.php';
-    $pdo=\database\test::returndb();
+    include '../../model/pdo_connect.php';
+    //$pdo=\Preskok\connect_to_database::__construct();
+    $pdo = (new Preskok\pdo_connect())->getInstance();
     $x="false";
     $result=$pdo->query("select * from login");
     $result=$result->fetchall();
@@ -18,6 +19,7 @@ if(isset($_POST['username'])&&isset($_POST['password']))
         }
     }
     $pdo=null;
+<<<<<<< HEAD
     echo('<script>alert("'.$x.'");</script>');
 
     $check =0;
@@ -38,6 +40,9 @@ if(isset($_POST['username'])&&isset($_POST['password']))
     else {
         echo "not valid";
     }
+=======
+
+>>>>>>> ecdd1cc344b1427ba07a5b16a208b4e434d75653
 }
 ?>
     <head>
@@ -57,10 +62,11 @@ if(isset($_POST['username'])&&isset($_POST['password']))
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Sign In</h3>
+                        <center><h3>Sign In</h3></center>
                     </div>
                     <div class="card-body">
                         <form method="post" action="login.php">
+<<<<<<< HEAD
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -92,6 +98,38 @@ if(isset($_POST['username'])&&isset($_POST['password']))
 			</div>
 		</div>
 	</div>
+=======
+                            <div class="input-group form-group">
+                               <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                               </div>
+                               <input type="text" class="form-control" placeholder="username" id = "username" name="username">
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="geslo" id = "password" name="password">
+                            </div>
+                            <div class="row align-items-center remember">
+                                <input type="checkbox">ostani prijavljen
+                            </div>
+                            <div class="form-group mt-2">
+                                <input type="submit" value="Login" class="btn float-right login_btn" onclick = "send_ajax_login()">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                            Nimate računa?<a href="#">Registrerajte se</a>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="#">Kliknite tukaj, če ste pozabili geslo?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> ecdd1cc344b1427ba07a5b16a208b4e434d75653
         </div>
     </body>
 </html>

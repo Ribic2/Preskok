@@ -16,6 +16,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/home.css">
+
 </head>
 <body onload="load()">
 
@@ -24,12 +25,25 @@
         <div class="card">
             <form>
                 <div class="card-body filter">
-                    <select name="brand">
-                      {% for item in car_brand %}
-                        <option>{{item}}</option>
-                      {% endfor %}
+<<<<<<< HEAD
+
+                    <select name="brand" class="browser-default custom-select custom-select-lg mb-3">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
                     </select>
+
+                    <select name="price_from" class="browser-default custom-select custom-select-lg mb-3"><!-- do 5  10 20 25 50 100 150 200 250-->
+=======
+                    <select name="brand">
+                        {% for i in brands %}
+                            <option>{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                    
                     <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->
+>>>>>>> 795af3b6a460e4de7cd18277439caab0841bc68f
                         <option value="">price from</option>
                         <option value="100 EUR">100 EUR</option>
                         <option value="500 EUR">500 EUR</option>
@@ -70,7 +84,7 @@
                         <option value="100.000 EUR">100.000 EUR</option>
                     </select>
 
-                    <select name="price_to"><!-- do 5  10 20 25 50 100 150 200 250-->
+                    <select name="price_to" class="browser-default custom-select custom-select-lg mb-3"><!-- do 5  10 20 25 50 100 150 200 250-->
                         <option value="">price to</option>
                         <option value="100 EUR">100 EUR</option>
                         <option value="500 EUR">500 EUR</option>
@@ -111,7 +125,7 @@
                         <option value="100.000 EUR">100.000 EUR</option>
                     </select>
 
-                    <select name="km"><!-- do 5  10 20 25 50 100 150 200 250-->
+                    <select name="km" class="browser-default custom-select custom-select-lg mb-3"><!-- do 5  10 20 25 50 100 150 200 250-->
                         <option value="">choose km</option>
                         <option value="-5000">-5000km</option>
                         <option value="-10000">-10000km</option>
@@ -125,16 +139,16 @@
                         <option value="250000-">250000km-</option>
                     </select>
 
-                    <select name="Fuel">
+                    <select name="Fuel" class="browser-default custom-select custom-select-lg mb-3">
                         <option value="disel">disel</option>
                         <option value="gasoline">gasoline</option>
                         <option value="electricity">electricity</option>
-                    </select>
+                    </select >
 
                     <br>
                     <br>
 
-                    <select name="model">
+                    <select name="model" class="browser-default custom-select custom-select-lg mb-3">
                         <option value="">choose model</option>
                         <option value="A4">A4</option>
                         <option value="R8">R8</option>
@@ -142,19 +156,19 @@
                         <option value="Clio">Clio</option>
                     </select>
 
-                    <select name="year_from">
+                    <select name="year_from" class="browser-default custom-select custom-select-lg mb-3">
                         <option value="1919">1919</option>
                         <option value="1950">1950</option>
                         <option value="1990">1990</option>
                     </select>
 
-                    <select name="year_to">
+                    <select name="year_to" class="browser-default custom-select custom-select-lg mb-3">
                         <option value="1919">1919</option>
                         <option value="1950">1950</option>
                         <option value="1990">1990</option>
                     </select>
 
-                    <input type="checkbox" name="used" value="new">
+                    <input type="checkbox" name="used" value="new" id="fancy-checkbox-default">
                     New
 
                     <input type="checkbox" name="used" value="testing">
@@ -162,18 +176,13 @@
 
                     <input type="checkbox" name="used" value="used">
                     Used
+
+
                 </div>
             </form>
         </div>
 
     </div>
 </div>
-    <script>
-        function load()
-        {  
-            window.history.pushState("page2","title","google.com");
-            //alert();
-        }
-    </script>
-    </body>
+</body>
 </html>
