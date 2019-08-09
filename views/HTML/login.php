@@ -3,7 +3,7 @@
 <?php
 if(isset($_POST['username'])&&isset($_POST['password']))
 {
-    echo '<script>alert("'.$_POST['password'].'");</script>';
+
     include '../../model/pdo_connect.php';
     //$pdo=\Preskok\connect_to_database::__construct();
     $pdo = (new Preskok\pdo_connect())->getInstance();
@@ -18,7 +18,7 @@ if(isset($_POST['username'])&&isset($_POST['password']))
         }
     }
     $pdo=null;
-    echo('<script>alert("'.$x.'");</script>');
+
 }
 ?>
     <head>
@@ -38,7 +38,7 @@ if(isset($_POST['username'])&&isset($_POST['password']))
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Sign In</h3>
+                        <center><h3>Sign In</h3></center>
                     </div>
                     <div class="card-body">
                         <form method="post" action="login.php">
@@ -52,22 +52,22 @@ if(isset($_POST['username'])&&isset($_POST['password']))
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="password" id = "password" name="password">
+                                <input type="password" class="form-control" placeholder="geslo" id = "password" name="password">
                             </div>
                             <div class="row align-items-center remember">
-                                <input type="checkbox">Remember Me
+                                <input type="checkbox">ostani prijavljen
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-2">
                                 <input type="submit" value="Login" class="btn float-right login_btn" onclick = "send_ajax_login()">
                             </div>
                         </form>
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-center links">
-                            Don't have an account?<a href="#">Sign Up</a>
+                            Nimate računa?<a href="#">Registrerajte se</a>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a href="#">Forgot your password?</a>
+                            <a href="#">Kliknite tukaj, če ste pozabili geslo?</a>
                         </div>
                     </div>
                 </div>
