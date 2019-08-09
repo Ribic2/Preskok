@@ -3,6 +3,7 @@
 <?php
 if(isset($_POST['username'])&&isset($_POST['password']))
 {
+    echo $_POST['password'];
     include '../../model/database.php';
     $pdo=\database\test::returndb();
     $x="false";
