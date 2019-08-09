@@ -9,10 +9,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<<<<<<< HEAD:views/HTML/Prijava.html
 		<link rel="stylesheet" type="text/css" href="../css/Prijava.css">
 		<script src = "../js/prijava.js"></script>
+=======
+        <link rel="stylesheet" type="text/css" href="../css/Registracija.css">
+>>>>>>> 795af3b6a460e4de7cd18277439caab0841bc68f:views/HTML/personal.php
     </head>
-    <body id = "body">
+    <body>
         <div class="container">
         <div class="d-flex justify-content-center h-100">
 		<div class="card">
@@ -25,20 +29,20 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username" id = "username">
+						<input type="text" class="form-control" placeholder="username">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password" id = "password"> 
+						<input type="password" class="form-control" placeholder="password">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="button" value="Login" class="btn float-right login_btn" onclick = "send_ajax_login()">
+						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>

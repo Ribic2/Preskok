@@ -1,21 +1,31 @@
 <?php
 namespace Preskok;
 
-$ip="160.153.133.165";
-$db="Preskok";
-$dsn="mysql:host=$ip;dbname=$db;charset=utf8mb4";
-$options=
-    [
-    PDO::ATTR_EMULATE_PREPARES   => false,
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ];
-try
-{
-    $pdo = new PDO($dsn, "preskok", "Preskok2019", $options);
-}
-catch (Exception $e)
-{
-  error_log($e->getMessage());
-  exit('Error');
+class pdo_connect{
+    public $host = "160.153.133.165";
+    public $db = "preskok";
+    public $username = "preskok";
+    public $password = "Preskok2019";
+
+    static $pdo; 
+  
+    public function __construct(){
+      try{
+        if(!self::$pdo instanceof PDO)
+          $this->createInstance();
+          
+        return $this->getInstance();
+      }
+      catch(PDOException $e){
+        echo $e;
+      }
+    }
+
+    public function createInstance(){
+      self::$pdo = new \PDO("mysql:host=".$this->host.";dbname=".$this->db, $this->username, $this->password);
+    }
+
+    public function getInstance(){
+      return self::$pdo;
+    }
 }

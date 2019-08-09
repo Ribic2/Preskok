@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .kkk
+        {
+            background-image:url(../../model/database.php)
+        }
+    </style>
     <title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,13 +18,14 @@
     <link rel="stylesheet" type="text/css" href="../css/home.css">
 
 </head>
-<body>
+<body onload="load()">
 
 <div class="container">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <form>
                 <div class="card-body filter">
+<<<<<<< HEAD
 
                     <select name="brand" class="browser-default custom-select custom-select-lg mb-3">
                         <option value="volvo">Volvo</option>
@@ -28,6 +35,14 @@
                     </select>
 
                     <select name="price_from" class="browser-default custom-select custom-select-lg mb-3"><!-- do 5  10 20 25 50 100 150 200 250-->
+=======
+                    <select name="brand">
+                      {% for item in car_brand %}
+                        <option>{{item}}</option>
+                      {% endfor %}
+                    </select>
+                    <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->
+>>>>>>> 795af3b6a460e4de7cd18277439caab0841bc68f
                         <option value="">price from</option>
                         <option value="100 EUR">100 EUR</option>
                         <option value="500 EUR">500 EUR</option>
@@ -168,6 +183,12 @@
 
     </div>
 </div>
-
-</body>
+    <script>
+        function load()
+        {  
+            window.history.pushState("page2","title","google.com");
+            //alert();
+        }
+    </script>
+    </body>
 </html>

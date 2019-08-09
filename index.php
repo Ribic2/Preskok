@@ -2,6 +2,10 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/views/HTML/');
+$twig = new \Twig\Environment($loader, []);
+
+
 // create a server request object
 $request = Zend\Diactoros\ServerRequestFactory::fromGlobals
     (
@@ -11,32 +15,89 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals
     $_COOKIE,
     $_FILES
 );
+//sql
 
+/*
+use Aura\Sql\ExtendedPdo;
+use Aura\Sql\ConnectionLocator;
+
+$connection_factory = new ConnectionLocator();
+
+$connection_factory->setDefault(function () {
+    return new ExtendedPdo(
+        'mysql:160.153.133.165;dbname=Preskok',
+        'preskok',
+        'Preskok2019'
+    );
+});
+
+*/
+
+/*$pdo = new PDO('mysql:160.153.133.165;dbname=Preskok','preskok','Preskok2019');
+var_dump($pdo);exit;*/
+
+$pdo = (new Preskok\pdo_connect())->getInstance();
 // create the router container and get the routing map
 $routerContainer = new Aura\Router\RouterContainer();
 $map = $routerContainer->getMap();
 
+
 // add a route to the map, and a handler for it
-$map->get('index', '/', function ($request) {
+
+//Home root
+$map->get('home', '/', function ($request) use ($twig, $pdo) {
     $response = new Zend\Diactoros\Response();
-    $response->getBody()->write("INDEX PAGE");
+    $stmt = $pdo->prepare("SELECT * FROM brand;");
+    $stmt->execute();
+
+    $car_brands = array();
+
+    foreach($stmt->fetchAll() as $row){
+        array_push($car_brands, $row['brandname']);
+    }
+    print_r($car_brands);
+
+    $response->getBody()->write(
+        $twig->render('home.php', $car_brands)
+    );
     return $response;
 });
 
-
-$map->get('home', '/home', function ($request) {
+//Login
+$map->get('login', '/login', function ($request) use ($twig, $pdo) {
     $response = new Zend\Diactoros\Response();
-    //$response->getBody()->write("HOME PAGE");
-    //return $response;
     
-    exit;
-});
-$map->get('/login', '/login', function ($request) {
-    $response = new Zend\Diactoros\Response();
-    $response->getBody()->write("login page");
+    $response->getBody()->write(
+        $twig->render('Prijava.php', )
+    );
     return $response;
 });
 
+//Registration selecter
+$map->get('registration_selector', '/registration_selector', function ($request) use ($twig) {
+    $response = new Zend\Diactoros\Response();
+    $response->getBody()->write(
+        $twig->render('IzberaRegistracije.php')
+    );
+    return $response;
+});
+
+//Registration for normal user
+$map->get('registration_private', '/registration', function ($request) use ($twig) {
+    $response = new Zend\Diactoros\Response();
+    $response->getBody()->write(
+        $twig->render('RegistracijaPosameznika.php')
+    );
+    return $response;
+});
+//Registration for Seller
+$map->get('registration_sellet', '/registration_seller', function ($request) use ($twig) {
+    $response = new Zend\Diactoros\Response();
+    $response->getBody()->write(
+        $twig->render('RegistracijaTrgovca.php')
+    );
+    return $response;
+});
 /*
 $map->get('user.edit', '/user/edit', function ($request) {
    $responseHandler("Text");

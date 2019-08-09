@@ -15,7 +15,7 @@ function send_ajax_login(){
         }
       };
 
-    xhttp.open("POST", "http://dev.carmarket.com/views/HTML/Prijava.html", true);
+    xhttp.open("POST", "http://dev.carmarket.com/views/HTML/Prijava.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send("username="+username+"&password="+password);
 }

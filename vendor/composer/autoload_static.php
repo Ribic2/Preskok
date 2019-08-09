@@ -130,6 +130,7 @@ class ComposerStaticInit1c656804d6b474184946d5303aeb1592
         ),
         'A' => 
         array (
+            'Aura\\Sql\\' => 9,
             'Aura\\Router\\' => 12,
         ),
     );
@@ -456,6 +457,10 @@ class ComposerStaticInit1c656804d6b474184946d5303aeb1592
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Aura\\Sql\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aura/sql/src',
         ),
         'Aura\\Router\\' => 
         array (
