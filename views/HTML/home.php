@@ -25,10 +25,11 @@
             <form>
                 <div class="card-body filter">
                     <select name="brand">
-                      {% for item in car_brand %}
-                        <option>{{item}}</option>
-                      {% endfor %}
+                    {% for i in brands %}
+                        <option>{{ i }}</option>
+                    {% endfor %}
                     </select>
+                    
                     <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->
                         <option value="">price from</option>
                         <option value="100 EUR">100 EUR</option>

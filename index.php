@@ -51,14 +51,13 @@ $map->get('home', '/', function ($request) use ($twig, $pdo) {
     $stmt->execute();
 
     $car_brands = array();
-
+   
     foreach($stmt->fetchAll() as $row){
         array_push($car_brands, $row['brandname']);
     }
-    print_r($car_brands);
 
     $response->getBody()->write(
-        $twig->render('home.php', $car_brands)
+        $twig->render('home.php', ['brands'=>$car_brands])
     );
     return $response;
 });
