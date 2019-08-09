@@ -10,18 +10,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
         .borderc{
-            border: solid black 1px;
-            border-radius: 15px;
+            border: solid rgba(76, 83, 91, 1) 2px;
+            border-radius: 3px;
         }
         body{
-            background-image: url(https://image.shutterstock.com/image-vector/abstract-yellow-gray-arrow-3d-260nw-1044122824.jpg )
+            background-image: url(../css/ozadje.png )
+        }
+        .login_btn{
+            color: black;
+            background-color: #FFC312;
+            width: 150px;
+        }
+        .login_btn:hover{
+            color: black;
+            background-color: white;
+            border: solid black 1px;
         }
     </style>
 </head>
 <body class="bg-info">
     <div class="container">
         <!--title-->
-        <div class="row borderc p-5 bg-white" style="border: solid black 2px; border-top: solid white 2px; border-top-left-radius: 0px; border-top-right-radius: 0px;">
+        <div class="row borderc p-5 bg-white mt-2" style="border: solid  rgba(76, 83, 91, 1)">
             <div class="col-sm-8 p-3">
                 <h1>Ime Avta</h1>
             </div>
@@ -29,6 +39,9 @@
                 <h1>5000€</h1>
             </div>
         </div>
+
+
+
         <!--content-->
         <div class="row mt-4 text-center">
             <!--slike-->
@@ -41,10 +54,12 @@
                     <img src="https://vignette.wikia.nocookie.net/disney/images/4/46/Profile_-_Lightning_McQueen.jpg/revision/latest?cb=20190502052906" alt="Slika" style="height: 100%;" class="float-left border mr-2">
                 </div>
             </div>
+
+
             <!--kontakti-->
             <div class="borderc text-center ml-4 card" style="width:30%;">
-                <div class="card-body bg-warning" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
-                    <h3>Prodajalec:</h3>
+                <div class="card-body " style="border-top-left-radius: 3px; border-top-right-radius: 3px; background-color: #FFC312">
+                    <h2>Prodajalec:</h2>
                 </div>
                 <div class="card-body">
                     <h1>Marko</h1>
@@ -56,13 +71,13 @@
                     <h4>8000 Novo mesto</h4>
                 </div>
                 <div class="card-body">
-                    <a href="#" class="btn btn-warning">Pošlji sporočilo</a>
+                    <a class="btn login_btn">Pošlji sporočilo</a>
                 </div>
             </div>
         </div>
         <!--specs-->
-        <div class="p-5 card mt-4" style="border-radius: 15px; width: 100%;">
-            <div class="card-body bg-warning">
+        <div class="p-5 card mt-4" style="border-radius: 3px; width: 100%;">
+            <div class="card-body text-white" style="background-color: rgba(76, 83, 91, 1)">
                 <h1>Osnovni podatki:</h1>
             </div>
             <div class="card-body">

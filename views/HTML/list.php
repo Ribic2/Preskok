@@ -15,6 +15,7 @@
 <body>
     <div class="container">
         <div class="row">
+
             <div class="col-xl-3 mg_">
                 <div class="card pad">
                     <h3 class="card-title"><a>Filtri</a></h3>

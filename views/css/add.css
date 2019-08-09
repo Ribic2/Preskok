@@ -1,0 +1,7 @@
+.borderc{
+    border: solid black 1px;
+    border-radius: 15px;
+}
+body{
+    background-image: url("ozadje.png")
+}
