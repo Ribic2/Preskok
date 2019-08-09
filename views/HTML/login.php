@@ -3,6 +3,7 @@
 <?php
 if(isset($_POST['username'])&&isset($_POST['password']))
 {
+
     include '../../model/database.php';
     $pdo=\database\test::returndb();
     $x="false";
@@ -17,6 +18,9 @@ if(isset($_POST['username'])&&isset($_POST['password']))
     }
     $pdo=null;
     echo('<script>alert("'.$x.'");</script>');
+    $password = 'mypassword';
+    $hash = crypt($password);
+    echo $password;
 }
 ?>
     <head>
@@ -33,33 +37,24 @@ if(isset($_POST['username'])&&isset($_POST['password']))
     </head>
     <body id = "body">
         <div class="container">
-        <div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-				<h3>Sign In</h3>
-			</div>
-			<div class="card-body">
-				<form method="post" action="prijava.php">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Sign In</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="prijava.php">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-<<<<<<< HEAD:views/HTML/login.php
-						<input type="text" class="form-control" placeholder="username" name="username">
-=======
-						<input type="text" class="form-control" placeholder="username" id = "username">
->>>>>>> dbea11bad5044c72fd6d8c2761bd1addb661bf45:views/HTML/Prijava.php
-						
-					</div>
+                        <input type="text" class="form-control" placeholder="username" id = "username" name="password">
+                    </div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-<<<<<<< HEAD:views/HTML/login.php
-						<input type="password" class="form-control" placeholder="password" name="password">
-=======
-						<input type="password" class="form-control" placeholder="password" id = "password">
->>>>>>> dbea11bad5044c72fd6d8c2761bd1addb661bf45:views/HTML/Prijava.php
+						<input type="password" class="form-control" placeholder="password" id = "password" name="password">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me

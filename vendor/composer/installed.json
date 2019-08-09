@@ -107,6 +107,61 @@
         ]
     },
     {
+        "name": "aura/sql",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/auraphp/Aura.Sql.git",
+            "reference": "2be02d5dfd9fdee6df199de1a19572aa490bb744"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/auraphp/Aura.Sql/zipball/2be02d5dfd9fdee6df199de1a19572aa490bb744",
+            "reference": "2be02d5dfd9fdee6df199de1a19572aa490bb744",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0",
+            "psr/log": "^1.0"
+        },
+        "require-dev": {
+            "pds/skeleton": "~1.0",
+            "phpunit/phpunit": "~5.0"
+        },
+        "time": "2018-06-11T12:57:42+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Aura\\Sql\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aura.Sql Contributors",
+                "homepage": "https://github.com/auraphp/Aura.Sql/contributors"
+            }
+        ],
+        "description": "A PDO extension that provides lazy connections, array quoting, query profiling, value binding, and convenience methods for common fetch styles. Because it extends PDO, existing code that uses PDO can use this without any changes to the existing code.",
+        "homepage": "https://github.com/auraphp/Aura.Sql",
+        "keywords": [
+            "mysql",
+            "pdo",
+            "pgsql",
+            "postgres",
+            "postgresql",
+            "sql server",
+            "sqlite",
+            "sqlserver",
+            "sqlsrv"
+        ]
+    },
+    {
         "name": "container-interop/container-interop",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",

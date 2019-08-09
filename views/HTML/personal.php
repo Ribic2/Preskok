@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Prijava</title>
+        <title>Registracija</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -9,48 +9,92 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../css/Registracija.css">
+        <link rel="stylesheet" type="text/css" href="../css/RegistracijaPosameznika.css">
     </head>
     <body>
         <div class="container">
         <div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Sign In</h3>
+				<h3>Register</h3>
 			</div>
 			<div class="card-body">
 				<form>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" class="form-control" placeholder="username">
-						
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="input-group form-group">	
+                                <input type="text" class="form-control" placeholder="ime" name="name">	
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="input-group form-group">	
+						<input type="text" class="form-control" placeholder="priimek" name="surname">	
 					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" class="form-control" placeholder="password">
+                        </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-sm">
+                    <div class="input-group form-group">	
+						<input type="text" class="form-control" placeholder="email" name="email">
 					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="input-group form-group">
+						<input type="password" class="form-control" placeholder="geslo" name="password">
 					</div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="input-group form-group">
+						<input type="password" class="form-control" placeholder="potrdi geslo" name="password2">
+					</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm">
+                    <div class="input-group form-group">	
+						<input type="text" class="form-control" placeholder="telefon" name="phone">	
+					</div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                    <div class="input-group form-group">	
+						<input type="text" class="form-control" placeholder="država" name="country">	
+					</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="input-group form-group">	
+						<input type="text" class="form-control" placeholder="mesto" name="city">	
+					</div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="input-group form-group">	
+						<input type="text" class="form-control" placeholder="poštna št." name="postnum">	
+					</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                    <div class="input-group form-group">	
+						<input type="text" class="form-control" placeholder="naslov" name="address">	
+					</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm">
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+						<input type="submit" value="Registriraj" class="btn login_btn" name="subbutton">
 					</div>
+                    </div>
+                    </div>
 				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
+			 </div>
 			</div>
 		</div>
 	</div>
-</div>
     </body>
 </html>
