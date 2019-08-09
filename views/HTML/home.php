@@ -25,28 +25,9 @@
             <form>
                 <div class="card-body filter">
                     <select name="brand">
-<<<<<<< HEAD
-                        <?php
-                            require __DIR__ . '/vendor/autoload.php';
-
-                            $obj = new Preskok\connect_to_database();
-
-                            $sql = "SELECT brandname from brand";
-
-                            $stmt = $obj->query($sql);
-                            foreach($stmt as $row){
-                                echo '<option value="'.$row['brandname'].'">'.$row['brandname'].'</option>';
-                            }
-                            for($i = 0; $i <= 10; $i++){
-                                echo "<option value = ".$i.">".$i."</option>";
-                            }
-
-                        ?>
-=======
-                    {% for i in brands %}
-                        <option>{{ i }}</option>
-                    {% endfor %}
->>>>>>> 1772bd326097586ab3118fcd6b3e911d95d1d41e
+                        {% for i in brands %}
+                            <option>{{ i }}</option>
+                        {% endfor %}
                     </select>
                     
                     <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->

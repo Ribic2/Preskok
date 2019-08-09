@@ -20,17 +20,15 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals
 $routerContainer = new Aura\Router\RouterContainer();
 $map = $routerContainer->getMap();
 
+$pdo = (new Preskok\pdo_connect())->getInstance();
 
 // add a route to the map, and a handler for it
 
 //Home root
-$map->get('home', '/', function ($request) use ($twig) {
+$map->get('home', '/', function ($request) use ($twig, $pdo) {
     $response = new Zend\Diactoros\Response();
-<<<<<<< HEAD
-    $response->getBody()->write(
-        $twig->render('home.php')
-=======
-    $stmt = $pdo->prepare("SELECT * FROM brand;");
+   
+    $stmt = $pdo->prepare("SELECT * FROM brand");
     $stmt->execute();
 
     $car_brands = array();
@@ -41,7 +39,6 @@ $map->get('home', '/', function ($request) use ($twig) {
 
     $response->getBody()->write(
         $twig->render('home.php', ['brands'=>$car_brands])
->>>>>>> 1772bd326097586ab3118fcd6b3e911d95d1d41e
     );
     return $response;
 });
