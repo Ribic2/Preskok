@@ -89,7 +89,10 @@
                     <div class="row">
                         <div class="col-sm">
 					       <div class="form-group mt-3">
-						   <input type="submit" value="Registriraj" class="btn login_btn" name="subbuttonmerchant">
+
+						            <a href="register.php"></a>
+
+
 					    </div>
                     </div>
                  </div>
