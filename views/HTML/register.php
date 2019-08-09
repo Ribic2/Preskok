@@ -37,7 +37,7 @@
 			</div>
             <div class="card-footer">
                     <div class="form-group">
-                        <a href="register.php">
+                        <a href="personal.php">
 						<input type="submit" onclick="personal.php" value="Želim se registrirati kot POSAMEZNIK" class="btn float-center login_btn">
                         </a>
 					</div>
@@ -69,7 +69,7 @@
 			</div>
             <div class="card-footer">
                     <div class="form-group">
-                        <a href="personal.php">
+                        <a href="business.php">
 						<input type="submit" value="Želim se registrirati kot TRGOVEC" class="btn float-center login_btn">
                         </a>
                     </div>
