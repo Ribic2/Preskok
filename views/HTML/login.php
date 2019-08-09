@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-
 if(isset($_POST['username'])&&isset($_POST['password']))
 {
-
+    echo '<script>alert("'.$_POST['password'].'");</script>';
     include '../../model/pdo_connect.php';
-    //$pdo=\Preskok\connect_to_database::__construct();
+
     $pdo = (new Preskok\pdo_connect())->getInstance();
     $x="false";
     $result=$pdo->query("select * from login");
@@ -18,118 +17,79 @@ if(isset($_POST['username'])&&isset($_POST['password']))
             $x="true";
         }
     }
-    $pdo=null;
-<<<<<<< HEAD
-    echo('<script>alert("'.$x.'");</script>');
 
-    $check =0;
+
+
 
     $password = 'password';
     $username = 'username';
-    $hash = dcrypt($password,'$2a$09$anexamplestringforsalt$')."\n<br>";
+    $hash = crypt($password,'$2a$09$anexamplestringforsalt$');
 
-    $check= $pdo->query("SELECT * FROM users WHERE username = 'username'");
-    $check->execute([$_POST['username']]);
-    $user = $check->fetch();
-
+    $check= $pdo->query("SELECT * FROM contact WHERE email = 'username'");
+    $user = $check->fetchall();
 
 
-    if ($user && password_verify($_POST['password'], $user['username']) ){
+
+    if ($username&& password_verify($_POST['password'], $_POST['username']) ){
         echo "valid";
     }
     else {
         echo "not valid";
     }
-=======
-
->>>>>>> ecdd1cc344b1427ba07a5b16a208b4e434d75653
+    $pdo=null;
 }
 ?>
-    <head>
-        <title>Prijava</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="../css/Prijava.css">
-		<script src = "views\js\prijava.js"></script>
-    </head>
-    <body id = "body">
-        <div class="container">
-            <div class="d-flex justify-content-center h-100">
-                <div class="card">
-                    <div class="card-header">
-                        <center><h3>Sign In</h3></center>
-                    </div>
-                    <div class="card-body">
-                        <form method="post" action="login.php">
-<<<<<<< HEAD
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-                        <input type="text" class="form-control" placeholder="username" id = "username" name="password">
-                    </div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" class="form-control" placeholder="password" id = "password" name="password">
-					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn" onclick = "function()">
-                    </div>
-
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="register.php">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="register.php">Forgot your password?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-=======
-                            <div class="input-group form-group">
-                               <div class="input-group-prepend">
-                                  <span class="input-group-text"><i class="fas fa-user"></i></span>
-                               </div>
-                               <input type="text" class="form-control" placeholder="username" id = "username" name="username">
-                            </div>
-                            <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                </div>
-                                <input type="password" class="form-control" placeholder="geslo" id = "password" name="password">
-                            </div>
-                            <div class="row align-items-center remember">
-                                <input type="checkbox">ostani prijavljen
-                            </div>
-                            <div class="form-group mt-2">
-                                <input type="submit" value="Login" class="btn float-right login_btn" onclick = "send_ajax_login()">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-center links">
-                            Nimate računa?<a href="#">Registrerajte se</a>
+<head>
+    <title>Prijava</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/Prijava.css">
+    <script src = "views\js\prijava.js"></script>
+</head>
+<body id = "body">
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Sign In</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="login.php">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <a href="#">Kliknite tukaj, če ste pozabili geslo?</a>
-                        </div>
+                        <input type="text" class="form-control" placeholder="username" id = "username" name="username">
                     </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="password" id = "password" name="password">
+                    </div>
+                    <div class="row align-items-center remember">
+                        <input type="checkbox">Remember Me
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn float-right login_btn" onclick = "send_ajax_login()" onclick="window.location.href='http://dev.carmarket.com/views/html/test.php'>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Don't have an account?<a href="#">Sign Up</a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="#">Forgot your password?</a>
                 </div>
             </div>
->>>>>>> ecdd1cc344b1427ba07a5b16a208b4e434d75653
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
