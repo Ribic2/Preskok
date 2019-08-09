@@ -16,3 +16,11 @@ body {
     border-radius: 3px;
     width: 100%;
 }
+.ad {
+    border: solid 1px rgba(76, 83, 91, 1);
+    border-radius: 3px;
+    width: 100%;
+}
+.mg_ {
+    margin-top: 15px;
+}

@@ -14,12 +14,11 @@
 </head>
 <body>
 <div class="container">
-    <div class="card">
+    <div class="card mg_">
 
-        <div class="card-body">
+        <div class="card-body ad">
             <div class="row">
                 <div class="col-xl-3">
-                    tuki bo slika
                     <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img">
                     <!-- img -->
                 </div>
@@ -44,7 +43,8 @@
                             <br>
                             <br>
                             <br>
-                            <h6 class="card-title"><a>Tuki je David hotu KRAJ</a></h6>
+                            <h5 class="card-title"><a>KRAJ</a></h5>
+                            <h5 class="card-title"><a>Številka</a></h5>
                         </div>
                     </div>
                 </div>
