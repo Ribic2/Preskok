@@ -47,7 +47,7 @@ $map->get('home', '/', function ($request) use ($twig, $pdo) {
 $map->get('login', '/login', function ($request) use ($twig) {
     $response = new Zend\Diactoros\Response();
     $response->getBody()->write(
-        $twig->render('Prijava.php')
+        $twig->render('login.php')
     );
     return $response;
 });

@@ -36,8 +36,8 @@
                                 -osnovni podatki o avtu
                             </div>
                             <br>
-                            <a class="btn login_btn"><i class="fas fa-clone left"></i> View AD</a>
-                        </div>
+                            <a class="btn login_btn" href="add.php"><i class="fas fa-clone left"></i> View AD</a>
+
                         <div class="col-xl-3">
                             <h5 class="card-title"><a>cena:PHPshit</a></h5>
                             <br>
