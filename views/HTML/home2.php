@@ -42,7 +42,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">CAR MARKET</a>
+      <a class="navbar-brand" href="home2.phps">CAR MARKET</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -54,10 +54,10 @@
             <a class="nav-link" href="#">objavi oglas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">prijava</a>
+            <a class="nav-link" href="login.php">prijava</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">registreraj se</a>
+            <a class="nav-link" href="register.php">registreraj se</a>
           </li>
         </ul>
       </div>
