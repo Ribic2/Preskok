@@ -13,7 +13,10 @@
 
 </head>
 <body>
-    <div class="container">
+<?php
+include '../templates/header.php';
+?>
+    <div class="container" style="height: 1500px">
         <div class="row">
 
             <div class="col-xl-3 mg_">
@@ -138,4 +141,8 @@
 
             </div>
         </div>
+    </div>
+        <?php
+        include '../templates/footer.php';
+        ?>
 </body>

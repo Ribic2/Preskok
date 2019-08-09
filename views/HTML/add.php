@@ -29,6 +29,9 @@
     </style>
 </head>
 <body class="bg-info">
+<?php
+include '../templates/header.php';
+?>
     <div class="container">
         <!--title-->
         <div class="row borderc p-5 bg-white mt-2" style="border: solid  rgba(76, 83, 91, 1)">
@@ -133,5 +136,10 @@
             </div>
         </div>
     </div>
+<br>
+<br>
+<?php
+include '../templates/footer.php';
+?>
 </body>
 </html>
