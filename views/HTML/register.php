@@ -9,7 +9,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../css/izberaregistracije.css">
+        <link rel="stylesheet" type="text/css" href="../css/Registracija.css">
     </head>
     <body>
         <div class="d-md-flex h-md-100 align-items-center">
@@ -37,7 +37,9 @@
 			</div>
             <div class="card-footer">
                     <div class="form-group">
+                        <a href="register.php">
 						<input type="submit" onclick="personal.php" value="Želim se registrirati kot POSAMEZNIK" class="btn float-center login_btn">
+                        </a>
 					</div>
                 </div>
 		</div>
@@ -67,8 +69,10 @@
 			</div>
             <div class="card-footer">
                     <div class="form-group">
+                        <a href="personal.php">
 						<input type="submit" value="Želim se registrirati kot TRGOVEC" class="btn float-center login_btn">
-					</div>
+                        </a>
+                    </div>
                 </div>
 		</div>
 	</div>

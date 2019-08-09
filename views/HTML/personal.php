@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
+    include '../../model/pdo_connect.php';
     function test($x,$y)
     {
         if($x=="")
@@ -35,10 +36,45 @@
             $pass=$_POST['password'];
             if($pass==$_POST['password2'])
             {
-                $pdo = (new Preskok\pdo_connect())->getInstance();
-                $email=$_POST['email'];
-                $result->query("select count(email) from contact where email='$email'");
-                echo $result;
+                if(strlen($pass)>=8)
+                {
+                    $pdo = (new Preskok\pdo_connect())->getInstance();
+                    $email=$_POST['email'];
+                    $result=$pdo->query("select count(email) from contact where email='$email'");
+                    $result=$result->fetchAll();
+                    if($result[0][0]==0)
+                    {
+                        $name=$_POST['name'];
+                        $surname=$_POST['surname'];
+                        $phone=$_POST['phone'];
+                        $country=$_POST['country'];
+                        $pdo->query("insert into contact(name,surname,phone_number,email) values('$name','$surname','$phone','$email')");
+                        $result=$pdo->query("select idContact from contact order by idContact desc limit 1");
+                        $result=$result->fetchall();
+                        $idcontact=$result[0][0];
+                        //$idcontact=$result;
+                        $pdo->query("insert into location(country) values('$country')");
+                        $result=$pdo->query("select idLocation from location order by idLocation desc limit 1");
+                        $result=$result->fetchall();
+                        $idlocation=$result[0][0];
+                        $options=['cost'=>12];
+                        $pass=password_hash($pass,PASSWORD_BCRYPT,$options);
+                        $datetime=date("Y-m-d H:i:s");
+                        $sql="insert into user(idContact,password,privilige,idLocation,date_created,date_updated) values('$idcontact','$pass',1,$idlocation,'$datetime','$datetime')";
+                        $pdo->query($sql);
+                        alert("Account creation successful");
+                        header('Location:login.php');
+                        //alert($sql);
+                    }
+                    else
+                    {
+                        alert("An account is already made with this email");
+                    }
+                }
+                else
+                {
+                    alert("Your password has to be at least 8 characters long");
+                }
             }
             else
             {
@@ -50,9 +86,10 @@
             alert("Please fill in all neccessary fields");
         }
     }
+    $pdo=null;
     ?>
     <head>
-        <title>Registracija novega posameznika</title>
+        <title>Registracija</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -60,14 +97,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-		<link rel="stylesheet" type="text/css" href="../css/Prijava.css">
-		<script src = "../js/prijava.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="../css/Registracija.css">
-
         <link rel="stylesheet" type="text/css" href="../css/RegistracijaPosameznika.css">
-
     </head>
     <body>
         <div class="container">

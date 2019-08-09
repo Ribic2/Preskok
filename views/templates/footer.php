@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Footer -->
-    <footer class="bg-primary text-white">
+    <footer class=" text-white" style="background-color: rgba(76, 83, 91, 1); border-top: 1px solid black">
         <br>
         <div class="clearfix">
             <div class="float-left col-md-4">

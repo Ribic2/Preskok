@@ -3,31 +3,24 @@
 
 <head>
     <style>
-        .card-body
-        {
-            background-color: rgba(76, 83, 91, 1);
-            border-width: 2px;
-            border-style: solid;
-            height: 680px;
-        }
+        .card-body{
+    background-color: rgba(76, 83, 91, 1);
+    border-width: 2px;
+    border-style: solid;
+    height: 680px;
+}
         body{
             background-image: url("ozadje.png"); 
             padding-top: 56px;
         }
         .login_btn{
-        color: black !important;
-        background-color: #FFC312 !important;
-        width: 100px !important;
-        float: right !important;
+        color: black;
+        background-color: #FFC312;
+        width: 100px;
         }
         .login_btn:hover{
-        color: black !important;
-        background-color: white !important;
-        }
-        .box
-        {
-            padding:5%;
-            font-size:100%;
+        color: black;
+        background-color: white;
         }
     </style>
   <meta charset="utf-8">
@@ -48,22 +41,25 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">CAR MARKET</a>
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Post an ad</a>
+            <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link" href="#">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="personal.php">Register</a>
+            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -81,23 +77,21 @@
                 <div class="card-body filter">
 
                     <select name="brand" class="browser-default custom-select custom-select-lg mb-3">
-                        <option>Brand</option>
-                        <?php
-                        include '../../model/pdo_connect.php';
-                        $pdo = (new Preskok\pdo_connect())->getInstance();
-                        $result=$pdo->query("select brandname from brand order by brandname asc");
-                        $result=$result->fetchAll();
-                        for($i=0;$i!=count($result);$i++)
-                        {
-                            $x=$result[$i][0];
-                            echo "<option value=$x>$x</option>";
-                        }
-                        $pdo=null;
-                        ?>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+
+                    <select name="price_from" class="browser-default custom-select custom-select-lg mb-3"></select>
+                    <select name="brand">
+                        {% for i in brands %}
+                            <option>{{ i }}</option>
+                        {% endfor %}
                     </select>
                     
-                    <select name="price_from" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="">Minimum price</option>
+                    <select name="price_from">
+                        <option value="">price from</option>
                         <option value="100 EUR">100 EUR</option>
                         <option value="500 EUR">500 EUR</option>
                         <option value="1.000 EUR">1.000 EUR</option>
@@ -138,7 +132,7 @@
                     </select>
 
                     <select name="price_to" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="">Maximum price</option>
+                        <option value="">price to</option>
                         <option value="100 EUR">100 EUR</option>
                         <option value="500 EUR">500 EUR</option>
                         <option value="1.000 EUR">1.000 EUR</option>
@@ -179,7 +173,7 @@
                     </select>
 
                     <select name="km" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="">Choose mileage</option>
+                        <option value="">choose km</option>
                         <option value="-5000">-5000km</option>
                         <option value="-10000">-10000km</option>
                         <option value="-20000">-20000km</option>
@@ -193,13 +187,16 @@
                     </select>
 
                     <select name="Fuel" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="disel">Diesel</option>
-                        <option value="gasoline">Gasoline</option>
-                        <option value="electricity">Electric</option>
+                        <option value="disel">disel</option>
+                        <option value="gasoline">gasoline</option>
+                        <option value="electricity">electricity</option>
                     </select >
 
+                    <br>
+                    <br>
+
                     <select name="model" class="browser-default custom-select custom-select-lg mb-3">
-                        <option value="">Car model</option>
+                        <option value="">choose model</option>
                         <option value="A4">A4</option>
                         <option value="R8">R8</option>
                         <option value="C3">C3</option>
@@ -207,54 +204,44 @@
                     </select>
 
                     <select name="year_from" class="browser-default custom-select custom-select-lg mb-3">
-                        <option>Oldest make year</option>
-                        <?php
-                        for($i=1900;$i!=2020;$i++)
-                        {
-                            echo "<option value=$i>$i</option>";
-                        }
-                        ?>
+                        <option value="1919">1919</option>
+                        <option value="1950">1950</option>
+                        <option value="1990">1990</option>
                     </select>
 
                     <select name="year_to" class="browser-default custom-select custom-select-lg mb-3">
-                        <option>Youngest make year</option>
-                        <?php
-                        for($i=1900;$i!=2020;$i++)
-                        {
-                            echo "<option value=$i>$i</option>";
-                        }
-                        ?>
+                        <option value="1919">1919</option>
+                        <option value="1950">1950</option>
+                        <option value="1990">1990</option>
                     </select>
-                    <div style="color:white; text-align:center;">
+                    <div style="color: white">
                     <input type="checkbox" name="used" value="new" id="fancy-checkbox-default">
                     New
 
                     <input type="checkbox" name="used" value="testing">
-                    Tested
+                    Testing
 
                     <input type="checkbox" name="used" value="used">
-                    Used
+                    Useds
                     </div>
-                    <div class="form-group">
-                        <input type="submit" value="Search" class="btn login_btn" onclick = "send_ajax_login()">
+                    <div class="form-group btn login_btn" style="background-color: yellow; float: right">
+                        <input type="submit" value="Išči" class="btn login_btn" onclick = "send_ajax_login()">
                     </div>
                 </div>
             </form>
         </div>
         </div>
-          <div class="box">
-              <p class="m-0 text-center text-white">Copyright &copy; dev.carmarket.com 2019</p>
-          </div>
     </div>
 </div>
-<!--
+
   <footer class="navbar fixed-bottom py-5 bg-dark">
-    
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
   </footer>
--->
-    <!--
+      
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    -->
+
 </body>
 </html>

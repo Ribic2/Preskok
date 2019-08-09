@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- header -->
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <nav class="navbar navbar-expand-sm  navbar-dark" style="background-color: rgba(76, 83, 91, 1); border-bottom: 1px solid black">
       <!-- Brand/logo -->
         <a class="navbar-brand" href="#">
             <img src="https://www.stickpng.com/assets/images/59db69d33752880e93e16efc.png" alt="CarMarket" style="width:150px;">

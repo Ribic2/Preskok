@@ -13,22 +13,30 @@
 
 </head>
 <body>
+<<<<<<< HEAD
     <div class="container">
         <div class="row" id = "content_area">
+=======
+<?php
+include '../templates/header.php';
+?>
+    <div class="container" style="height: 1500px">
+        <div class="row">
+>>>>>>> 079eca6dfa8f23bcd1ff5235de6711af05b8f7f7
 
             <div class="col-xl-3 mg_">
                 <div class="card pad">
-                    <h3 class="card-title"><a>Filtri</a></h3>
+                    <h3 class="card-title"><a>Filters</a></h3>
                     <div class="card mg_">
 
                         <div class="card-body ad naslov">
 
-                            <h4 class="card-title"><a>starost</a></h4>
+                            <h4 class="card-title"><a>age</a></h4>
                             <div class="card-body filtri">
                                 <form>
-                                    <input type="checkbox"  value="starost">Used <br>
-                                    <input type="checkbox"  value="starost">Testing <br>
-                                    <input type="checkbox"  value="starost">New <br>
+                                    <input type="checkbox"  value="age">Used <br>
+                                    <input type="checkbox"  value="age">Testing <br>
+                                    <input type="checkbox"  value="age">New <br>
 
                                 </form>
                             </div>
@@ -39,12 +47,12 @@
 
                         <div class="card-body ad naslov">
 
-                            <h4 class="card-title"><a>kilometrina</a></h4>
+                            <h4 class="card-title"><a>milage</a></h4>
                             <div class="card-body filtri">
                                 <form>
-                                    <input type="checkbox"  value="kilometrina">10000 km <br>
-                                    <input type="checkbox"  value="kilometrina">50000 km <br>
-                                    <input type="checkbox"  value="kilometrina">200000 km<br>
+                                    <input type="checkbox"  value="milage">10000 km <br>
+                                    <input type="checkbox"  value="milage">50000 km <br>
+                                    <input type="checkbox"  value="milage">200000 km<br>
 
                                 </form>
                             </div>
@@ -58,6 +66,7 @@
             <div class="col-xl-9">
                 <div class="card mg_">
                     <div class="card-body ad">
+<<<<<<< HEAD
                         <?php
                             include '../../model/pdo_connect.php';
                             $pdo = (new Preskok\pdo_connect())->getInstance();
@@ -103,9 +112,89 @@
                                 echo "</div>";
                             }
                     ?>
+=======
+                        <div class="row">
+                            <div class="col-xl-3">
+                                <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img">
+                                <!-- img -->
+                            </div>
+                            <div class="col-xl-9">
+                                <!-- info -->
+                                <div class="row">
+                                    <div class="col-xl-9">
+
+                                        <h5 class="card-title"><a>Car name</a></h5>
+
+                                        <div class="info_car">
+                                            -basic car data<br>
+                                            -basic car data<br>
+                                            -basic car data<br>
+                                            -basic car data
+                                        </div>
+                                        <br>
+                                        <a class="btn login_btn"><i class="fas fa-clone left"></i> View AD</a>
+                                    </div>
+                                    <div class="col-xl-3">
+                                        <h5 class="card-title"><a>cena:2000€</a></h5>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <h5 class="card-title"><a>Region</a></h5>
+                                        <h5 class="card-title"><a>Number</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card mg_">
+
+                    <div class="card-body ad">
+                        <div class="row">
+                            <div class="col-xl-3">
+                                <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img">
+                                <!-- img -->
+                            </div>
+                            <div class="col-xl-9">
+                                <!-- info -->
+                                <div class="row">
+                                    <div class="col-xl-9">
+
+                                        <h5 class="card-title"><a>Car name</a></h5>
+
+                                        <div class="info_car">
+                                            -basic car data<br>
+                                            -basic car data<br>
+                                            -basic car data<br>
+                                            -basic car data
+                                        </div>
+                                        <br>
+                                        <a class="btn login_btn"><i class="fas fa-clone left"></i> View AD</a>
+                                    </div>
+                                    <div class="col-xl-3">
+                                        <h5 class="card-title"><a>cena:15€</a></h5>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <h5 class="card-title"><a>Region</a></h5>
+                                        <h5 class="card-title"><a>Number</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+>>>>>>> 079eca6dfa8f23bcd1ff5235de6711af05b8f7f7
                 </div>
 
 
             </div>
         </div>
+    </div>
+        <?php
+        include '../templates/footer.php';
+        ?>
 </body>
