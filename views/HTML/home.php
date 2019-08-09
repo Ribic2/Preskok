@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/home.css">
 </head>
-<body>
+<body onload="load()">
 
 <div class="container">
     <div class="d-flex justify-content-center h-100">
@@ -177,6 +177,12 @@
 
     </div>
 </div>
-
-</body>
+    <script>
+        function load()
+        {  
+            window.history.pushState("page2","title","google.com");
+            //alert();
+        }
+    </script>
+    </body>
 </html>

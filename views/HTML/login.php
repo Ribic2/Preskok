@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+if(isset($_POST['username'])&&isset($_POST['password']))
+{
+    include '../../model/database.php';
+    $pdo=\database\test::returndb();
+    $x="false";
+    $result=$pdo->query("select * from login");
+    $result=$result->fetchall();
+    for($i=0;$i!=count($result);$i++)
+    {
+        if($result[$i][0]==$_POST['username']&&$result[$i][1]==$_POST['password'])
+        {
+            $x="true";
+        }
+    }
+    $pdo=null;
+    echo('<script>alert("'.$x.'");</script>');
+}
+?>
     <head>
         <title>Prijava</title>
         <meta charset="utf-8">
@@ -19,19 +38,19 @@
 				<h3>Sign In</h3>
 			</div>
 			<div class="card-body">
-				<form>
+				<form method="post" action="prijava.php">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" class="form-control" placeholder="username" name="username">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" class="form-control" placeholder="password" name="password">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
