@@ -37,10 +37,11 @@
                     <select name="price_from" class="browser-default custom-select custom-select-lg mb-3"><!-- do 5  10 20 25 50 100 150 200 250-->
 =======
                     <select name="brand">
-                      {% for item in car_brand %}
-                        <option>{{item}}</option>
-                      {% endfor %}
+                        {% for i in brands %}
+                            <option>{{ i }}</option>
+                        {% endfor %}
                     </select>
+                    
                     <select name="price_from"><!-- do 5  10 20 25 50 100 150 200 250-->
 >>>>>>> 795af3b6a460e4de7cd18277439caab0841bc68f
                         <option value="">price from</option>
@@ -183,12 +184,5 @@
 
     </div>
 </div>
-    <script>
-        function load()
-        {  
-            window.history.pushState("page2","title","google.com");
-            //alert();
-        }
-    </script>
-    </body>
+</body>
 </html>

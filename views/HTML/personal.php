@@ -1,5 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+    function test($x,$y)
+    {
+        if($x=="")
+        {
+            $y=false;
+        }
+    }
+    function alert($x)
+    {
+        echo '<script>alert("'.$x.'");</script>';
+    }
+    if(
+        isset($_POST['name'])&&
+        isset($_POST['surname'])&&
+        isset($_POST['email'])&&
+        isset($_POST['password'])&&
+        isset($_POST['password2'])&&
+        isset($_POST['phone'])&&
+        isset($_POST['country'])
+    )
+    {
+        $cond=true;
+        test($_POST['name'],$cond);
+        test($_POST['surname'],$cond);
+        test($_POST['email'],$cond);
+        test($_POST['password'],$cond);
+        test($_POST['password2'],$cond);
+        test($_POST['phone'],$cond);
+        test($_POST['country'],$cond);
+        if($cond)
+        {
+            $pass=$_POST['password'];
+            if($pass==$_POST['password2'])
+            {
+                $pdo = (new Preskok\pdo_connect())->getInstance();
+                $email=$_POST['email'];
+                $result->query("select count(email) from contact where email='$email'");
+                echo $result;
+            }
+            else
+            {
+                alert("Both passwords must match");
+            }
+        }
+        else
+        {
+            alert("Please fill in all neccessary fields");
+        }
+    }
+    ?>
     <head>
         <title>Registracija</title>
         <meta charset="utf-8">
@@ -23,10 +74,10 @@
         <div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Register</h3>
+				<h3 style="text-align:center">Register</h3>
 			</div>
 			<div class="card-body">
-				<form>
+				<form method="post" action="personal.php">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="input-group form-group">	
