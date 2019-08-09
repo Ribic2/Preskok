@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <style>
-        .kkk
+        body
         {
-            background-image:url(../../model/database.php)
+            background-image:url(../css/ozadje.png)
         }
+
     </style>
     <title>Home</title>
     <meta charset="utf-8">
@@ -19,7 +20,9 @@
 
 </head>
 <body onload="load()">
-
+<?php
+include '../templates/header.php';
+?>
 <div class="container">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
@@ -184,5 +187,8 @@
 
     </div>
 </div>
+<?php
+include '../templates/footer.php';
+?>
 </body>
 </html>
