@@ -1,5 +1,5 @@
 body {
- background-image: url('https://wallpaperplay.com/walls/full/c/7/a/250327.jpg');
+ background-image: url("ozadje.png");
     width: 100%;
 }
 .login_btn{
@@ -28,6 +28,7 @@ body {
 .naslov {
     color: white;
     background-color: rgba(76, 83, 91, 1);
+
 }
 .filtri {
     color: black;

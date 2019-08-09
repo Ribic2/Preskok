@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="df40d744-1d6f-4f8e-afc8-66b2a9433c93" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/views/HTML/test.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/views/HTML/test2.php" afterDir="false" />
@@ -10,9 +9,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/HTML/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/HTML/login.php" afterDir="false" />
     </list>
-=======
+
     <list default="true" id="df40d744-1d6f-4f8e-afc8-66b2a9433c93" name="Default Changelist" comment="" />
->>>>>>> ecdd1cc344b1427ba07a5b16a208b4e434d75653
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,12 +173,16 @@
       <updated>1565176269908</updated>
       <workItem from="1565176272869" duration="1106000" />
 <<<<<<< HEAD
+      <workItem from="1565178068220" duration="37379000" />
+=======
+<<<<<<< HEAD
       <workItem from="1565178068220" duration="17483000" />
       <workItem from="1565274156228" duration="121000" />
       <workItem from="1565335088235" duration="12847000" />
 =======
       <workItem from="1565178068220" duration="36036000" />
 >>>>>>> ecdd1cc344b1427ba07a5b16a208b4e434d75653
+>>>>>>> 1ec5bd12968df6f83d16cb6b403e9c9add87aa91
     </task>
     <servers />
   </component>
